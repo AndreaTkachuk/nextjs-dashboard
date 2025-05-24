@@ -103,6 +103,7 @@ async function seedRevenue() {
 
 export async function GET() {
   try {
+    // import.meta.dirname is available after Node.js v20.11.0
     const result = await sql.begin((sql) => [
       seedUsers(),
       seedCustomers(),
