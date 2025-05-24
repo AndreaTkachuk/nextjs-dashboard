@@ -1,7 +1,7 @@
 import bcryptjs from 'bcryptjs';
 import postgres from 'postgres';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 async function seedUsers() {
@@ -103,7 +103,7 @@ async function seedRevenue() {
 
 export async function GET() {
   try {
-    // import.meta.dirname is available after Node.js v20.11.0
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const result = await sql.begin((sql) => [
       seedUsers(),
       seedCustomers(),
